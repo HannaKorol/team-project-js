@@ -11,14 +11,14 @@
     border: 0;
 }
 
-/* Стиль прихованих картинок */
+/* -------------Стиль прихованих картинок--------------------- */
 .hidden {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Анімація, коли картинки з'являються */
+/* ----------------Анімація, коли картинки з'являються-------------- */
 .animated {
     opacity: 1;
     transform: translateY(0);
@@ -27,7 +27,7 @@
 /*------------------------ стилі для контейнера covers ------------------- */
 .covers-section {
     max-width: 375px;
-    height: 572px;
+    height: 508px;
     padding-bottom: 64px;
     margin: 0 auto;
 }
@@ -42,7 +42,7 @@
 }  */
 
 
-/* -------------------------------------------animation style---------------------- */
+/* -------------------------------------------animation style for mobile---------------------- */
 
 .covers-container {
     position: relative;
@@ -50,9 +50,8 @@
   .covers-image-container {
     position: absolute;
      /* смещение верх по левому краю */
-     right: -400px;
      top: 0px;
-     bottom:-700px;
+/*      bottom:-700px; */
      overflow: hidden;
 /*     position: relative; */
 /*     overflow: hidden; */
@@ -108,103 +107,39 @@ transform: rotate(16deg);
     }
   }
   
-/* -------------------------------------------animation style end---------------------- */
 
-
-/* TABLET */
-/* HEADER */
-
-@media screen and (min-width: 768px) {
-    .container {
-      max-width: 768px;
-      padding-left: 32px;
-      padding-right: 32px;
-      margin: 0 auto;
-    }
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-resolution: 192dpi) {
-    .covers {
-      background-image: url(../img/covers/elements-tab-2x.png);
-    }
-  }
-}
-
-
-@media screen and (min-width: 1440px) {
-    .container {
-      max-width: 1440px;
-      padding-left: 32px;
-      padding-right: 32px;
-      margin: 0 auto;
-    }
-}
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------------------TABLET---------------------- */
-
+/* -------------------------------------TABLET---------------------- */
 
 @media screen and (min-width: 768px) {
     .covers-section {
       max-width: 768px;
       height: 960px;
-/*       padding-left: 32px;
-      padding-right: 32px; */
-      background-image: url(../img/covers/elements-tab-1x.png);
-    }
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-    only screen and (min--moz-device-pixel-ratio: 2),
-    only screen and (-o-min-device-pixel-ratio: 2/1),
-    only screen and (min-resolution: 192dpi) {
-    .covers {
-      background-image: url(../img/covers/elements-tab-2x.png);
-    }
-  }
+      padding-bottom: 96px;
 }
 
-.covers-image-container {
-    position: absolute;
-     /* смещение верх по левому краю */
-    right: -1800px;
+  .covers-image-container {
+/*     position: absolute;
+ */  /* смещение верх по левому краю */
+/*     right: -1800px;
     bottom:-2000px;
-    left: -1200px;
-    overflow: hidden;
+    left: -1200px; */
+    height: 960px;
+    width: 768px;
+/*   overflow: hidden; */
 /*     font-family: "Pridi", sans-serif;
     font-weight: 600;
     font-size: 34px;
     text-transform: uppercase; */
+    background-image: url(../img/covers/elements-tab-1x.png);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-resolution: 192dpi) {
+.covers-image-container {
+  background-image: url(../img/covers/elements-tab-2x.png);
+}
   }
 
   .covers-image {
@@ -216,7 +151,7 @@ transform: rotate(16deg);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(528%/36); 
+    width: calc(562%/9); 
     white-space: nowrap;
     animation-name: marqueeLine;
     animation-duration: 5s;
@@ -227,7 +162,7 @@ transform: rotate(16deg);
   @keyframes marqueeLine {
     from {
         /* смещение картинок по оси верх */
-      transform: translateX(185%);
+      transform: translateX(-10%);
     }
     
     to {
@@ -235,15 +170,62 @@ transform: rotate(16deg);
       transform: translateX(-110%);
     }
   }
+}
 
 /* -------------------------------------------Big screens---------------------- */
 @media screen and (min-width: 1440px) {
-    .container {
+    .covers-section {
       max-width: 1440px;
-/*       padding-left: 32px;
-      padding-right: 32px; */
-/*       margin: 0 auto; */
-    }
+      height: 960px;
+    padding-bottom: 164px;
 }
 
+  .covers-image-container {
+    position: absolute;
+    right: -400px;      /* зміщення вгору по лівому краю */
+    top:0px;
+    bottom:-1000px;
+    left: 0;
+/*     overflow: hidden; */
+    background-image: url(../img/covers/elements-pc-1x.png);
+    height: 960px;
+    width: 1440px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-resolution: 192dpi) {
+.covers-image-container {
+  background-image: url(../img/covers/elements-pc-2x.png);
+}
+  }
+
+  .covers-image {
+    flex-shrink: 0;
+    margin-right: 20px;     /* пространство збоку между картинками */
+    margin-bottom: 30px; /* пространство внизцу между картинками */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(299%/9); 
+    white-space: nowrap;
+    animation-name: marqueeLine;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes marqueeLine {
+    from {
+        /* смещение картинок по оси верх */
+      transform: translateX(-10%);
+    }
     
+    to {
+        /* смещение картинок по оси вниз */
+      transform: translateX(-110%);
+    }
+  }
+} 
+

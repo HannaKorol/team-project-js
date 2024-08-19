@@ -14,7 +14,7 @@ export default function initCoversAnimation() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 }); // Запуск анімації, коли 20% елемента потрапляє у viewport
+    }, { threshold: 0.2 }); // Запуск анімації, коли 20% елемента потрапляє у viewport
 
     // Додаємо всі зображення до спостереження
     coversImages.forEach(image => {
