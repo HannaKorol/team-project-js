@@ -1,4 +1,4 @@
-export default function initCoversAnimation() {
+function initCoversAnimation() {
     // Отримуємо всі зображення у секції covers-section
     const coversImages = document.querySelectorAll('.covers-image');
 
